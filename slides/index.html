@@ -86,8 +86,7 @@
                     <li class="fragment">Why MVC in JavaScript, why now?</li>
                     <li class="fragment">JavaScript in Big Apps</li>
                     <li class="fragment">Breaking down MVC, with examples</li>
-                    <li class="fragment">Creating our own mini JavaScript framework</li>
-                    <li class="fragment">Building our first mini app!</li>
+                    <li class="fragment">Working on a Bookshelf App</li>
                     <li class="fragment">MV* frameworks: types and some popular frameworks and tools</li>
                 </ul>
             </section>
@@ -201,9 +200,9 @@
             </section>
 
             <section data-html="slides/model.html" hidden="" class="future" style="">
-                <h2>The "C"</h2>
+                <h2>The Controller</h2>
 
-                <p>Stands for "Controller" - it typically acts as a "middleman" between your app, your views, and your data.</p>
+                <p>Typically acts as a "middleman" between your app, your views, and your data.</p>
                 <p>Its use varies in JS MVC Frameworks. More on that later.</p>
 
                 <br />
@@ -215,7 +214,7 @@
                         <li>Acts as a 'middleman'</li>
                         <li>Connects the Model to the Views</li>
                         <li>Determines what should be shown and when</li>
-                        <li>(Not always used in JavaScript MVC Patterns)</li>
+                        <li>(Not always used in JavaScript "MVC" Patterns)</li>
                     </ul>
                 </div>
             </section>
@@ -308,14 +307,6 @@ Controller.prototype.onRoute = function(event) {
             </section>
 
             <section>
-                <h2>MVC Framework Classes</h2>
-                <ul class="fragment left">
-                    <li>Functions (Methods) &amp; Attributes required by ALL Objects of that type</li>
-                    <li>Are then extended with custom Methods &amp; Attributes when you create an <b>instance</b> of that class for app-specific use.</li>
-                </ul>
-            </section>
-
-            <section>
                 <h2>Data</h2>
                 <section>
                     <ul>
@@ -362,7 +353,7 @@ Controller.prototype.onRoute = function(event) {
                         <li>JS Templating Libraries are your friend</li>
                     </ul>
                 </section>
-                <section>
+<!--                 <section>
                     <h3>Example Template (Embedded in HTML)</h3>
                     <pre><code class="html">
  &lt;script type="text/template" id="book-template"&gt;
@@ -374,12 +365,10 @@ Controller.prototype.onRoute = function(event) {
         &lt;/div&gt;
     &lt;/div&gt; 
 &lt;/script&gt;
-                    </code></pre>
-                </section>
+                    </code></pre> -->
                 <section>
                     <h3>Example Handlebars Template (Embedded in HTML)</h3>
                     <pre><code class="html">
-     &lt;script type="text/x-handlebars-template" id="book-template"&gt;
 &lt;div class="book"&gt;
     &lt;h4 class="book-title"&gt;{{ title }}&lt;/h4&gt;
     &lt;div class="book-author"&gt;{{ author }}&lt;/div&gt;
@@ -389,40 +378,34 @@ Controller.prototype.onRoute = function(event) {
         {{/each}}
     &lt;/div&gt;
 &lt;/div&gt; 
-    &lt;/script&gt;
                     </code></pre>
                 </section>
-
+            </section>
             <section>
                 <h2>Collections</h2>
                 <section>
                     <br />
-                    <p>Lists are so common, it's useful to have a Class to handle them.</p>
+                    <p>Lists of data is so common, it's useful to have a Class to handle them.</p>
                 </section>
 
                 <section>
                     <h3>Collection Example</h3>
 
-                    <code><pre class="javascript">
+                    <pre><code class="javascript">
  var Collection = function(data, options) {
-    // this time we expect an array of objects
     data = data || [];
     options = options || {};
 
-    // specify a model to use in the options, or use the base Model from the framework.
-    this.model = options.model;
+    this.model = options.model || Model;
 
-    // create an empty array to store our future models
     this.models = [];
 
-    // iterate through each object in the array, and 
-    // add it to the models property.
     for(var i = 0; i &lt; data.length; i++) {
-    this.models.push(new this.model(data[i]));
+        this.models.push(new this.model(data[i]));
     }
 
 };                       
-                    </pre></code>
+                    </code></pre>
                 </section>
             </section>
 
@@ -441,15 +424,112 @@ Controller.prototype.onRoute = function(event) {
             </section>
 
             </section>
+
             <section>
                 <h2>Let's Develop It!</h2>
                 <div class="center">
                     <br /><br />
-                    <h4>Exercise 1: Mini MVC!</h4>
+                    <h4>Intro to a Simple MVC Framework</h4>
+                </div>
+            </section>
+
+            <section>
+                <h2>Let's Develop It!</h2>
+                <div class="center">
+                    <br /><br />
+                    <h4>Intro to Models and Views</h4>
                     <p class="center" style="font-size: 150%;">
                         <a href="http://bit.ly/mvc_1">http://bit.ly/mvc_1</a>
                     </p>
                 </div>
+            </section>
+
+            <section data-html="slides/mv-frameworks.html" hidden="" class="future" style="">
+                <h1>JavaScript Frameworks</h1>
+                <h2>MVC</h2>
+                <h3>and More!</h3>
+            </section>
+
+
+            <section data-html="slides/frameworks.html" hidden="" class="future" style="">
+                <h2>Frameworks</h2>
+
+                <img src="./images/frameworks.png" alt="">
+            </section>
+
+
+            <section data-html="slides/mvc.html" hidden="" class="future" style="">
+                <h2>MVC</h2>
+
+                <p>Three components: Model, View, Controller.</p>
+
+                <p>
+                    <strong>Controllers</strong> send commands to the Model that update the Model's state. Controllers also send commands to the View that change the presentation of the model.</p>
+
+                <p>Examples: <a href="http://emberjs.com/">EmberJS</a>, <a href="https://angularjs.org/">AngularJS</a>
+                </p>
+            </section>
+
+
+            <section data-html="slides/mvp.html" hidden="" class="future" style="">
+                <h2>MVP</h2>
+
+                <p>Three components: Model, View, Presenter.</p>
+
+                <p>MVP is derived from MVC.</p>
+
+                <p>
+                    <strong>Presenters</strong> are a middle layer, similar to a Controller. All logic related to presentation goes in the Presenters. The Model and the View don't talk to each other at all.</p>
+
+                <p>Examples: <a href="http://backbonejs.org/">BackboneJS</a>
+                </p>
+            </section>
+
+            <section data-html="slides/mvc-vs-mvp.html" hidden="" class="future" style="">
+                <h2>MVC vs. MVP</h2>
+
+                <p>They're quite similar, but not identical.</p>
+
+                <img src="./images/mvc-mvp.png" alt="">
+            </section>
+
+
+            <section data-html="slides/mvvm.html" hidden="" class="future" style="">
+                <h2>MVVM</h2>
+
+                <p>Three components: Model, View, ViewModel.</p>
+
+                <p>
+                    <strong>ViewModels</strong> send messages between the View and the Model - it is a mediator or converter. It changes Model info into View info, passes commands from the View into the Model, and exposes public properties, commands, and abstractions.</p>
+
+                <p>Examples: <a href="http://knockoutjs.com/">KnockoutJS</a>
+                </p>
+            </section>
+
+
+            <section data-html="slides/mv.html" hidden="" class="future" style="">
+                <h2>MV*</h2>
+
+                <p>Something else! There are other types of MV* frameworks out there. They're not as popular, so don't worry about them for now, but it is good to know that there are other options out there.</p>
+            </section>
+
+
+
+            <section data-html="slides/further-reading.html" hidden="" class="future" style="">
+                <h2>Further Reading</h2>
+
+                <p><a href="http://www.smashingmagazine.com/2012/07/27/journey-through-the-javascript-mvc-jungle/">The JavaScript MVC Jungle</a>
+                </p>
+
+                <p>Breakdown of differences between MV* frameworks.</p>
+            </section>
+
+
+
+            <section data-html="slides/todo-mvc.html" hidden="" class="future" style="">
+                <h2>Todo MVC</h2>
+
+                <p><a href="http://todomvc.com/">Todo MVC</a> implements a Todo list app in many of the popular JavaScript frameworks. It's a great tool to play with the different frameworks to see the differences.</p>
             </section>
 
         </div>

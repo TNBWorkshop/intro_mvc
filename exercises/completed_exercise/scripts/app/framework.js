@@ -8,24 +8,24 @@ MVC.Model = function(data, options) {
   options = options || {};
 
   this.attributes = data;
+
+  this.get = function (attrName) {
+    if(this.attributes[attrName]) {
+      
+      return this.attributes[attrName];
+    } else {
+
+      return false;
+    }
+  };
+  
+  this.set = function(attrName, newValue) {
+    this.attributes[attrName] = newValue;
+  };
+
 };
 
-MVC.Model.prototype.get = function (attrName) {
-  if(this.attributes[attrName]) {
-    
-    return this.attributes[attrName];
-  } else {
-
-    return false;
-  }
-};
-
-MVC.Model.prototype.set = function(attrName, newValue) {
-  this.attributes[attrName] = newValue;
-};
-
-
-// BONUS: COLLECTION CLASS
+// COLLECTION CLASS
 MVC.Collection = function(data, options) {
   // this time we expect an array of objects
   data = data || [];
@@ -53,17 +53,20 @@ MVC.View = function(options) {
 
   this.model = options.model;
   this.template = options.template;
+
+  this.render = function () {
+    // prepare the html template for use with model data
+    var template = Handlebars.compile(this.template);
+    var result = template(this.model.attributes);
+
+    // create a jQuery object to reference our view's rendered content
+    // this will be used for event binding later
+    this.$el = $(result);
+
+    // pass compiled template our model data and return the result
+    return this.$el;
+  };
+
 };
 
-MVC.View.prototype.render = function () {
-  // prepare the html template for use with model data
-  var template = Handlebars.compile(this.template);
-  var result = template(this.model.attributes);
 
-  // create a jQuery object to reference our view's rendered content
-  // this will be used for event binding later
-  this.$el = $(result);
-
-  // pass compiled template our model data and return the result
-  return this.$el;
-};
