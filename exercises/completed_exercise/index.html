@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Awesome Bookshelf</title>
+    <link rel="stylesheet" type="text/css" href="./styles/main.css">
+</head>
+<body>
+
+    <div id="app-container">
+        <!-- dynamic HTML will go here -->    
+    </div>
+
+
+    <!-- TEMPLATES -->
+    <script type="text/template" id="book-template">
+        <div class="book">
+            <div class="book-image">
+                {{#if imageUrl }}
+                    <img src="{{ imageUrl }}" />
+                {{else}}
+                    <img src="./images/books/no-book.png" />
+                {{/if}}
+            </div>
+            <div class="book-info">
+                <h3 class="book-title">{{ title }}</h3>
+                <div class="book-author">by: {{ author }}</div>
+            
+                <div class="book-details">
+                    {{#each details}}
+                        <span class="detail">
+                            <span class="name">{{ @key }}: </span>
+                            <span class="value">{{ this }}</span>
+                        </span>
+                    {{/each}}
+                </div>
+            </div>
+        </div> 
+    </script>
+    <script type="text/template" id="bookshelf-template">
+        <div class="bookshelf">
+            <h2>{{ name }}</h2>
+            <div class="book-list"></div>
+        </div>
+    </script>
+
+    <!-- DEPENDENCIES (aka, libraries) -->
+    <script type="text/javascript" src="./scripts/lib/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="./scripts/lib/handlebars-v2.0.0.js"></script>
+
+    <!-- DATA (usually this would come from a server/ajax) -->
+    <script type="text/javascript" src="./data.js"></script>
+
+    <!-- FRAMEWORK (our base MVC Classes -->
+    <script type="text/javascript" src="./scripts/app/framework.js"></script>
+
+    <!-- APP FILES -->
+    <script type="text/javascript" src="./scripts/app/models.js"></script>
+    <script type="text/javascript" src="./scripts/app/views.js"></script>
+    <script type="text/javascript" src="./scripts/app/main.js"></script>
+</body>
+</html>

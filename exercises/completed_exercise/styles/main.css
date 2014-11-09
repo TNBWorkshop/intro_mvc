@@ -1,0 +1,48 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700);
+
+body {
+  color: #666;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: #4A90E2;
+}
+
+.bookshelf {
+
+}
+
+.book {
+  padding: 12px;
+  border-bottom: 2px solid #EAEAEA;
+  overflow: hidden;
+}
+
+.book .book-image, .book .book-info {
+  float: left;
+}
+
+.book .book-title {
+  margin: 2px 0;
+}
+
+.book .book-author {
+  font-weight: 700;
+}
+
+.book .book-image img {
+  height: 150px;
+  margin-right: 6px;
+}
+
+.book-details {
+  margin-top: 6px;
+  display: none;
+}
+
+.book-details .detail {
+  display: block;
+}
