@@ -204,7 +204,7 @@
                 <h2>The "C"</h2>
 
                 <p>Stands for "Controller" - it typically acts as a "middleman" between your app, your views, and your data.</p>
-                <p>Its use varies in JS MVC Framworks. More on that later.</p>
+                <p>Its use varies in JS MVC Frameworks. More on that later.</p>
 
                 <br />
                 <br />
@@ -295,11 +295,11 @@ var Controller = function(route, options) {
                 </section>
                 <section>
                     <pre><code class="javascript">
-View.prototype.show = function(options) {
+Controller.prototype.show = function(options) {
     // render bits here 
 };
 
-View.prototype.onRoute = function(event) {
+Controller.prototype.onRoute = function(event) {
     // when URL changes, do something
     // like get assoc. Models &amp; Views, and call this.show();  
 };
@@ -352,6 +352,7 @@ View.prototype.onRoute = function(event) {
                     </code></pre>  
                 </section>
             </section>
+
             <section>
                 <h2>Templates</h2>
                 <section>
@@ -391,6 +392,53 @@ View.prototype.onRoute = function(event) {
     &lt;/script&gt;
                     </code></pre>
                 </section>
+
+            <section>
+                <h2>Collections</h2>
+                <section>
+                    <br />
+                    <p>Lists are so common, it's useful to have a Class to handle them.</p>
+                </section>
+
+                <section>
+                    <h3>Collection Example</h3>
+
+                    <code><pre class="javascript">
+ var Collection = function(data, options) {
+    // this time we expect an array of objects
+    data = data || [];
+    options = options || {};
+
+    // specify a model to use in the options, or use the base Model from the framework.
+    this.model = options.model;
+
+    // create an empty array to store our future models
+    this.models = [];
+
+    // iterate through each object in the array, and 
+    // add it to the models property.
+    for(var i = 0; i &lt; data.length; i++) {
+    this.models.push(new this.model(data[i]));
+    }
+
+};                       
+                    </pre></code>
+                </section>
+            </section>
+
+            <section data-html="slides/data-binding.html" hidden="" class="future" style="">
+                <h2>Data binding</h2>
+
+                <p>Data binding is one of the most popular features of JavaScript MVC frameworks.</p>
+                <br />
+                <div class="fragment">
+                    <p>Automatically respond to:</p>
+                    <ul>
+                        <li>Changes to the data</li>
+                        <li>User-triggered events (clicks, form inputs, etc)</li>
+                    </ul>
+                </div>
+            </section>
 
             </section>
             <section>
