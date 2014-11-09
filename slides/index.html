@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>girldevelopit-reveal.js - The GDI HTML Presentation Framework</title>
+
+    <meta name="description" content="Girl Develop It framework for easily creating beautiful presentations using HTML in GDI theme. Forked from Hakim El Hattab's reveal.js">
+    <meta name="author" content="Girl Develop It">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/gdilight.css" id="theme">
+    <link rel="stylesheet" href="css/styles.css" id="theme">
+
+    <!-- For syntax highlighting -->
+     <!-- light editor -->
+     <link rel="stylesheet" href="lib/css/light.css">
+    <!-- dark editor-->
+<!--     <link rel="stylesheet" href="lib/css/dark.css">
+ -->
+    <!-- If use the PDF print sheet so students can print slides-->
+
+    <link rel="stylesheet" href="css/print/pdf.css" type="text/css" media="print">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    <style type="text/css">
+        .slides ol {
+            list-style: decimal;
+        } 
+    </style>
+</head>
+
+<body>
+
+    <div class="reveal">
+
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <!-- Opening -->
+            <section>
+                <img src="./gdi_logo_badge.png" style="width: 400px; border: none; box-shadow: none;">
+
+                <h3>Intro to</h3>
+                <h3>MVC Frameworks</h3>
+
+            </section>
+            <!-- Compatibility-->
+
+            <section data-html="slides/welcome.html" hidden="" class="future" style="">
+                <h2>Welcome!</h2>
+
+                <p>Girl Develop It is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.</p>
+
+                <ul>
+                    <li>Some "rules"</li>
+                    <li>We are here for you!</li>
+                    <li>Every question is important</li>
+                    <li>Help each other</li>
+                    <li>Have fun</li>
+                </ul>
+            </section>
+
+
+            <section data-html="slides/introductions.html" hidden="" class="future" style="">
+                <h2>Introductions</h2>
+
+                <p>Tell us about yourself.</p>
+                <ul>
+                    <li>Who are you?</li>
+                    <li>What do you hope to get out of this class?</li>
+                    <li>Random Question of the Day is...?</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>What we'll cover today</h2>
+
+                <ul>
+                    <li class="fragment">What is MVC?</li>
+                    <li class="fragment">Why MVC in JavaScript, why now?</li>
+                    <li class="fragment">JavaScript in Big Apps</li>
+                    <li class="fragment">Breaking down MVC, with examples</li>
+                    <li class="fragment">Creating our own mini JavaScript framework</li>
+                    <li class="fragment">Building our first mini app!</li>
+                    <li class="fragment">MV* frameworks: types and some popular frameworks and tools</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>What is MVC?</h2>
+                <p class="fragment"><b>Wikiattack!</b>: Model–view–controller (MVC) is a software architectural pattern for implementing user interfaces. It divides a given software application into three interconnected parts, so as to separate internal representations of information from the ways that information is presented to or accepted from the user.<br/> <br />
+
+                First introduced in the 1970's for use with Smalltalk-80 (wow!).</p>
+            </section>
+
+            <section>
+                <h2>What is MVC?</h2>
+
+                <img src="./images/500px-MVC-Process.svg.png" />                
+            </section>
+            <section>
+                <h3>MVC in JavaScript, why now?</h3>
+                <ul>
+                    <li class="fragment">JS was released around 1995</li>
+                    <li class="fragment">... but wasn't take seriously as a programming language.</li>
+                    <li class="fragment">Was used mostly for display and UX purposes, until...</li>
+                    <li class="fragment">AJAX! (Google Maps and Mail usage in 2005-ish)</li>
+                    <li class="fragment">People started building apps entirely in JS</li>
+                    <li class="fragment">Apps like: </li>
+                </ul>
+            </section>
+
+            <section data-html="slides/hulu.html" hidden="" class="future" style="">
+                <h4>Hulu</h4>
+                <img src="./images/hulu.png" alt="">
+            </section>
+
+            <section data-html="slides/twitter.html" hidden="" class="future" style="">
+                <h4>Twitter</h4>
+                <img src="./images/twitter.png" alt="">
+            </section>
+
+            <section data-html="slides/google-maps.html" hidden="" class="future" style="">
+                <h4>Google Maps</h4>
+                <img src="./images/gmaps.png" alt="">
+            </section>
+
+            <section data-html="slides/big-app-functionality.html" hidden="" class="future" style="">
+                <h2>Big App Functionality</h2>
+
+                <p>There's a lot happening in these big apps. Specifically, JavaScript:</p>
+
+                <ul>
+                    <li>Fetches data (via AJAX)</li>
+                    <li>Processes and calculates data</li>
+                    <li>Creates DOM (like w/jQuery)</li>
+                    <li>Reacts to events</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Mo' Code, Mo' Problems</h2>
+                <br />
+                <p class="center" style="font-size: 120%;">JavaScript needed a way to organize all of this application code.<br/><br /> Thankfully, other languages have been doing <i>that</i> for years.</p>
+            </section>
+
+            <section data-html="slides/making-it-manageable.html" hidden="" class="future" style="">
+                <h2>Making it manageable</h2>
+
+                <p>We can do a few things to make our code more manageable:</p>
+
+                <ul>
+                    <li class="fragment">Split into multiple files</li>
+                    <li class="fragment">Modularize the code into re-usable chunks</li>
+                    <li class="fragment">Use object-oriented concepts to organize code</li>
+                    <li class="fragment">Separate the code into <i>"model"</i> vs. <i>"view"</i></li>
+                </ul>
+            </section>
+
+            <section data-html="slides/mvc-javascript.html" hidden="" class="future" style="">
+                <h2>MVC Pattern in JavaScript</h2>
+                <h4>Dissecting the pieces of frameworks</h4>
+            </section>
+
+            <section data-html="slides/model.html" hidden="" class="future" style="">
+                <h2>Model</h2>
+
+                <p>The model represents your data.</p>
+
+                <br />
+                <br />
+                <div class="fragment">
+                    <p><b>Important Jobs:</b></p>
+
+                    <ul>
+                        <li>Fetches data</li>
+                        <li>Processes data</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section data-html="slides/view.html" hidden="" class="future" style="">
+                <h2>View</h2>
+
+                <p>The view is your presentation layer -<br/> what people actually see.</p>
+                <br />
+                <br />
+                <div class="fragment">
+                    <p><b>Important Jobs:</b></p>
+                    <ul>
+                        <li>Create the DOM</li>
+                        <li>Handle DOM events</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section data-html="slides/model.html" hidden="" class="future" style="">
+                <h2>The "C"</h2>
+
+                <p>Stands for "Controller" - it typically acts as a "middleman" between your app, your views, and your data.</p>
+                <p>Its use varies in JS MVC Framworks. More on that later.</p>
+
+                <br />
+                <br />
+                <div class="fragment">
+                    <p><b>Important Jobs:</b></p>
+
+                    <ul>
+                        <li>Acts as a 'middleman'</li>
+                        <li>Connects the Model to the Views</li>
+                        <li>Determines what should be shown and when</li>
+                        <li>(Not always used in JavaScript MVC Patterns)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Code Examples</h2>
+                <h5>What does MVC look like in JavScript?</h5>
+            </section>
+
+            <section>
+                <h3>Model Example</h3>
+                <section>
+                    <pre><code class="javascript">
+var Model = function(data, options) {
+    data = data || {};
+    options = options || {};
+    this.attributes = data;
+    // initialization bits here
+};
+                    </code></pre>
+                </section>
+                <section>
+                    <pre><code class="javascript">
+Model.prototype.get = function(attrName) {
+    // return a value from the model's attributes (data)
+};
+
+Model.prototype.save = function(options) {
+    // save bits here 
+};
+
+Model.prototype.delete = function() {
+    // delete bits
+};
+                    </code></pre>
+                </section>
+            </section>
+
+            <section>
+                <h3>View Example</h3>
+                <section>
+                <pre><code class="javascript">
+var View = function(options) {
+    options = options || {};
+    this.model = options.model;
+    this.template = options.template;
+    // initialization bits here
+};
+                </code></pre>
+                </section>
+                <section>
+                    
+                    <pre><code class="javascript">
+View.prototype.render = function(options) {
+    // render bits here 
+};
+
+View.prototype.onDataChange = function(event) {
+    // do stuff like re-render view on data update  
+};
+                    </code></pre>
+
+                </section>
+
+            </section>
+
+            <section>
+                <h3>Controller Example</h3>
+                <section>
+                    <pre><code class="javascript">
+var Controller = function(route, options) {
+    options = options || {};
+    this.route = route;
+    // initialization bits here
+};
+                    </code></pre>
+                </section>
+                <section>
+                    <pre><code class="javascript">
+View.prototype.show = function(options) {
+    // render bits here 
+};
+
+View.prototype.onRoute = function(event) {
+    // when URL changes, do something
+    // like get assoc. Models &amp; Views, and call this.show();  
+};
+                    </code></pre>
+                </section>
+            </section>
+
+            <section>
+                <h2>MVC Framework Classes</h2>
+                <ul class="fragment left">
+                    <li>Functions (Methods) &amp; Attributes required by ALL Objects of that type</li>
+                    <li>Are then extended with custom Methods &amp; Attributes when you create an <b>instance</b> of that class for app-specific use.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Data</h2>
+                <section>
+                    <ul>
+                        <li>Usually comes from a server via <code>AJAX</code> request</li>
+                        <li>Can also be from a browser's LocalStorage</li>
+                        <li>Usually in <code>JSON</code> format nowadays</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Example Data (JSON)</h3>
+                    <pre><code class="json">
+[
+    {
+      title: "Everything I Never Told You: A Novel",
+      author: "Celeste Ng",
+      imageUrl: "./images/books/book_1.jpeg"
+      details: [
+        pages: 304,
+        stars: 4,
+        rating: 1
+      ]
+    }, {
+      title: "All the Light We Cannot See: A Novel",
+      author: "Anthony Doerr",
+      imageUrl: "./images/books/book_2.jpeg"
+      details: [
+        pages: 544,
+        stars: 4.5,
+        rating: 2
+      ]
+    },
+    // ...
+]
+                    </code></pre>  
+                </section>
+            </section>
+            <section>
+                <h2>Templates</h2>
+                <section>
+                    <ul>
+                        <li>Just HTML!</li>
+                        <li>Comes in different formats, though</li>
+                        <li>JS Templating Libraries are your friend</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Example Template (Embedded in HTML)</h3>
+                    <pre><code class="html">
+ &lt;script type="text/template" id="book-template"&gt;
+    &lt;div class="book"&gt;
+        &lt;h4 class="book-title"&gt;&lt;/h4&gt;
+        &lt;div class="book-author"&gt;&lt;/div&gt;
+        &lt;div class="book-details"&gt;
+            &lt;span class="detail"&gt;&lt;span class="page-length"&gt;&lt;/span&gt; pages&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt; 
+&lt;/script&gt;
+                    </code></pre>
+                </section>
+                <section>
+                    <h3>Example Handlebars Template (Embedded in HTML)</h3>
+                    <pre><code class="html">
+     &lt;script type="text/template" id="book-template"&gt;
+&lt;div class="book"&gt;
+    &lt;h4 class="book-title"&gt;{{ title }}&lt;/h4&gt;
+    &lt;div class="book-author"&gt;{{ author }}&lt;/div&gt;
+    &lt;div class="book-details"&gt;
+        {{#each details}}
+            &lt;span class="detail"&gt;{{ name }}&lt;span class="value"&gt;{{ value }}&lt;/span&gt;&lt;/span&gt;
+        {{/each}}
+    &lt;/div&gt;
+&lt;/div&gt; 
+    &lt;/script&gt;
+                    </code></pre>
+                </section>
+
+            </section>
+            <section>
+                <h2>Let's Develop It!</h2>
+                
+            </section>
+
+        </div>
+        <footer>
+            <div class="copyright">
+                Girl Develop It Philly --
+                <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US">
+                    <img alt="Creative Commons License" style="" />
+                </a>
+            </div>
+        </footer>
+    </div>
+
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+    // Full list of configuration options available here:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [{
+            src: 'lib/js/classList.js',
+            condition: function() {
+                return !document.body.classList;
+            }
+        }, {
+            src: 'plugin/markdown/showdown.js',
+            condition: function() {
+                return !!document.querySelector('[data-markdown]');
+            }
+        }, {
+            src: 'plugin/markdown/markdown.js',
+            condition: function() {
+                return !!document.querySelector('[data-markdown]');
+            }
+        }, {
+            src: 'plugin/highlight/highlight.js',
+            async: true,
+            callback: function() {
+                hljs.initHighlightingOnLoad();
+            }
+        }, {
+            src: 'plugin/zoom-js/zoom.js',
+            async: true,
+            condition: function() {
+                return !!document.body.classList;
+            }
+        }, {
+            src: 'plugin/notes/notes.js',
+            async: true,
+            condition: function() {
+                return !!document.body.classList;
+            }
+        }]
+    });
+    </script>
+
+</body>
+
+</html>

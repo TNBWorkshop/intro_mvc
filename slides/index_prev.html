@@ -1,0 +1,817 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>girldevelopit-reveal.js - The GDI HTML Presentation Framework</title>
+
+    <meta name="description" content="Girl Develop It framework for easily creating beautiful presentations using HTML in GDI theme. Forked from Hakim El Hattab's reveal.js">
+    <meta name="author" content="Girl Develop It">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/gdilight.css" id="theme">
+    <link rel="stylesheet" href="css/styles.css" id="theme">
+
+    <!-- For syntax highlighting -->
+     <!-- light editor -->
+     <link rel="stylesheet" href="lib/css/light.css">
+    <!-- dark editor-->
+    <link rel="stylesheet" href="lib/css/dark.css">
+
+    <!-- If use the PDF print sheet so students can print slides-->
+
+    <link rel="stylesheet" href="css/print/pdf.css" type="text/css" media="print">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    <style type="text/css">
+        .slides ol {
+            list-style: decimal;
+        } 
+    </style>
+</head>
+
+<body>
+
+    <div class="reveal">
+
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <!-- Opening -->
+            <section>
+                <img src="./gdi_logo_badge.png" style="width: 400px; border: none; box-shadow: none;">
+
+                <h3>Intro to</h3>
+                <h3>MVC Frameworks</h3>
+
+            </section>
+            <!-- Compatibility-->
+
+            <section data-html="slides/welcome.html" hidden="" class="future" style="">
+                <h2>Welcome!</h2>
+
+                <p>Girl Develop It is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.</p>
+
+                <ul>
+                    <li>Some "rules"</li>
+                    <li>We are here for you!</li>
+                    <li>Every question is important</li>
+                    <li>Help each other</li>
+                    <li>Have fun</li>
+                </ul>
+            </section>
+
+
+            <section data-html="slides/introductions.html" hidden="" class="future" style="">
+                <h2>Introductions</h2>
+
+                <p>Tell us about yourself.</p>
+                <ul>
+                    <li>Who are you?</li>
+                    <li>What do you hope to get out of this class?</li>
+                    <li>Random Question of the Day is...?</li>
+                </ul>
+            </section>
+
+
+            <section data-html="slides/what-well-cover-today.html" hidden="" class="future" style="">
+                <h2>What we'll cover today</h2>
+
+                <ul>
+                    <li>Brief history of JavaScript and websites</li>
+                    <li>Examples of big JavaScript web apps</li>
+                    <li>What does JavaScript do in big apps?</li>
+                    <li>Making large amounts of JavaScript more managable</li>
+                    <li>What is a model? What is a view? What's a controller?</li>
+                    <li>Creating our own mini JavaScript framework</li>
+                    <li>Nesting views</li>
+                    <li>MV* frameworks: types and some popular frameworks</li>
+                </ul>
+            </section>
+
+            <section data-html="slides/history.html" hidden="" class="future" style="">
+                <h1>History</h1>
+                <h2>JavaScript and Websites</h2>
+                <h3>Then and Now</h3>
+            </section>
+
+            <section data-html="slides/web-10.html" hidden="" class="future" style="">
+                <h2>Web 1.0</h2>
+
+                <p>JavaScript wasn't really used for much.</p>
+
+                <img src="./images/web1.png" alt="">
+            </section>
+
+
+            <section data-html="slides/web-20.html" hidden="" class="future" style="">
+                <h2>Web 2.0</h2>
+
+                <p>JavaScript for AJAX - this made things a little nicer.</p>
+
+                <img src="./images/web2.png" alt="">
+            </section>
+
+
+            <section data-html="slides/web-now.html" hidden="" class="future" style="">
+                <h2>Web Now</h2>
+
+                <p>JavaScript for
+                    <em>everything</em>!</p>
+
+                <img src="./images/web_now.png" alt="">
+            </section>
+
+            <section data-html="slides/big-apps.html" hidden="" class="future" style="">
+                <h2>Big Apps</h2>
+
+                <p>JavaScript is used for big apps that involve lots of user interaction. Things like...</p>
+            </section>
+
+            <section data-html="slides/hulu.html" hidden="" class="future" style="">
+                <h4>Hulu</h4>
+                <img src="./images/hulu.png" alt="">
+            </section>
+
+            <section data-html="slides/twitter.html" hidden="" class="future" style="">
+                <h4>Twitter</h4>
+                <img src="./images/twitter.png" alt="">
+            </section>
+
+            <section data-html="slides/google-maps.html" hidden="" class="future" style="">
+                <h4>Google Maps</h4>
+                <img src="./images/gmaps.png" alt="">
+            </section>
+
+            <section data-html="slides/big-app-functionality.html" hidden="" class="future" style="">
+                <h2>Big App Functionality</h2>
+
+                <p>There's a lot happening in these big apps. Specifically, JavaScript:</p>
+
+                <ul>
+                    <li>Fetches data (via AJAX)</li>
+                    <li>Processes and calculates data</li>
+                    <li>Creates DOM (like w/jQuery)</li>
+                    <li>Reacts to events</li>
+                </ul>
+            </section>
+
+
+            <section data-html="slides/thats-a-lot-of-js.html" hidden="" class="future" style="">
+                <h2>... that's a lot of JS</h2>
+
+                <p>So
+                    <em>much</em>
+                    <strong>code</strong>.</p>
+
+                <p>Coursera had
+                    <strong>28,848</strong>lines of JavaScript.</p>
+
+                <img src="./images/wat.gif" alt="">
+
+                <p>
+                    <em>It's ok to cry a little.</em>
+                </p>
+            </section>
+
+
+            <section data-html="slides/making-it-manageable.html" hidden="" class="future" style="">
+                <h2>Making it manageable</h2>
+
+                <p>We can do a few things to make this code more manageable:</p>
+
+                <ul>
+                    <li class="fragment">Split into multiple files</li>
+                    <li class="fragment">Modularize the code into re-usable chunks</li>
+                    <li class="fragment">Use object-oriented concepts to organize code</li>
+                    <li class="fragment">Separate the code into <i>"model"</i> vs. <i>"view"</i></li>
+                </ul>
+            </section>
+
+
+            <section data-html="slides/model.html" hidden="" class="future" style="">
+                <h2>Model</h2>
+
+                <p>The model represents your data.</p>
+
+                <br />
+                <br />
+                <div class="fragment">
+                    <p><b>Important Jobs:</b></p>
+
+                    <ul>
+                        <li>Fetches data</li>
+                        <li>Processes data</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section data-html="slides/view.html" hidden="" class="future" style="">
+                <h2>View</h2>
+
+                <p>The view is your presentation layer -<br/> what people actually see.</p>
+                <br />
+                <br />
+                <div class="fragment">
+                    <p><b>Important Jobs:</b></p>
+                    <ul>
+                        <li>Create the DOM</li>
+                        <li>Handle DOM events</li>
+                    </ul>
+                </div>
+            </section>
+
+
+            <section data-html="slides/model.html" hidden="" class="future" style="">
+                <h2>The "C"</h2>
+
+                <p>Usually stands for "Controller". <br /> (more on this later)</p>
+
+                <br />
+                <br />
+                <div class="fragment">
+                    <p><b>Important Jobs:</b></p>
+
+                    <ul>
+                        <li>Acts as a 'middleman'</li>
+                        <li>Connects the Model to the Views</li>
+                        <li>Determines what should be shown and when</li>
+                        <li>(Not always used in JavaScript MVC Patterns)</li>
+                    </ul>
+                </div>
+            </section>
+
+
+
+            <section data-html="slides/mvc-javascript.html" hidden="" class="future" style="">
+                <h2>MVC Pattern in JavaScript</h2>
+                <h4>Dissecting the pieces of frameworks</h4>
+            </section>
+
+
+            <section data-html="slides/mvc-features.html" hidden="" class="future" style="">
+                <h2>MVC Features</h2>
+
+                <p>JavaScript MVC frameworks (usually) share 3 primary features:</p>
+                <br />
+                
+                <ul>
+                    <li>Event Binding between HTML and a client-side JavaScript object model View Templates</li>
+                    <li>Data Storage (local or through a web server to a database)</li>
+                    <li>URL Routing (keeping the back button working and search engines happy)</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Model Example</h3>
+                <pre><code class="javascript">
+var Model = function(data, options) {
+    data = data || {};
+    this.attributes = data;
+    // initialization bits here
+};
+
+Model.prototype.save = function(options) {
+    // save bits here 
+};
+
+Model.prototype.delete = function() {
+    // delete bits
+};
+                </code></pre>
+            </section>
+
+            <section>
+                <h3>View Example</h3>
+                <pre><code class="javascript">
+var View = function(options) {
+    options = options || {};
+    this.model = options.model;
+    // initialization bits here
+};
+
+View.prototype.render = function(options) {
+    // render bits here 
+};
+                </code></pre>
+            </section>
+
+            <section data-html="slides/data-binding.html" hidden="" class="future" style="">
+                <h2>Data binding</h2>
+
+                <p>Data binding is one of the most popular features of JavaScript MVC frameworks.</p>
+                <br />
+                <div class="fragment">
+                    <p>Automatically respond to:</p>
+                    <ul>
+                        <li>Changes to the data</li>
+                        <li>User-triggered events (clicks, form inputs, etc)</li>
+                    </ul>
+                </div>
+            </section>
+
+                <section>
+                    <h6>Example Data (JSON)</h6>
+                    <pre><code class="json">
+[
+    {
+        "name": "4 Hour Workweek",
+        "author": "Tim Ferris"
+    }, {
+        "name": "4 Hour Body",
+        "author": "Tim Ferris"
+    }, {
+        "name": "4 Hour Chef",
+        "author": "Tim Ferris"
+    }
+]
+                    </code></pre>    
+            </section>
+
+
+            <section data-html="slides/view-templates.html" hidden="" class="future" style="">
+                <h2>View templates</h2>
+
+                <p>View templates are how we take our JavaScript model data and put it inside of our HTML.</p>
+                <br />
+
+            </section>
+            <section>
+                Stub: Example of a template (inside existing HTML)
+                - Example of HTML "hidden" inside of a script block inside an HTML page
+            </section>
+
+            <section data-html="slides/data-storage.html" hidden="" class="future" style="">
+                <h2>Data storage</h2>
+
+                <p>Frameworks store data on the server in one of a few ways:</p>
+
+                <ul>
+                    <li>Automatically synchronizing with RESTful services</li>
+                    <li>Asking the developer to implement do-it-yourself AJAX calls to web services returning
+                        <code>json</code>
+                    </li>
+                    <li>allowing either of the above approaches</li>
+                </ul>
+            </section>
+
+
+            <section data-html="slides/routing.html" hidden="" class="future" style="">
+                <h2>Routing</h2>
+
+                <p>Frameworks that use routes allow you to use the back button in browsers.</p>
+                <br />
+                <p>Seems simple, doesn't it? But with all of that clicking around on one single page, you can't store anything in browser history, which means you can't go back without losing everything.</p>
+                <br />
+                <p>Not all frameworks use routing.</p>
+            </section>
+
+            <section>
+                <h3>What would we need to create a "bookshelf" app?</h3>
+                <ul>
+                    <li>What kind of data would we need?</li>
+                    <li>Models?</li>
+                    <li>Views?</li>
+                </ul>
+            </section>
+
+            <section data-html="slides/sample-app.html" hidden="" class="future" style="">
+                <h2>Sample App</h2>
+
+                <img src="./images/bookshelf_screenshot.png" alt="">
+
+                <p><a href="http://www.teaching-materials.org/jsmvc/demo/bookshelf.html">Try it!</a>
+                </p>
+            </section>
+
+
+            <section data-html="slides/book-model-and-collection.html" hidden="" class="future" style="">
+                <h1>Models &amp; Collections</h1>
+                <h2>
+                    <code>BookModel</code>
+                </h2>
+                <h3>
+                    <code>BookCollection</code>
+                </h3>
+            </section>
+
+
+            <section data-html="slides/book-model.html" hidden="" class="future" style="">
+                <h2>
+                    <code>Book</code>Model</h2>
+
+                <p>Sets defaults and computes properties.</p>
+
+                <pre><code class="javascript" contenteditable="">
+function BookModel(bookJSON) {
+    this.title     = bookJSON.title || 'Untitled';
+    this.author    = bookJSON.author || 'Unknown author';
+    this.asin      = bookJSON.asin;
+    this.thumbnail = bookJSON.thumbnail;
+    this.rating    = bookJSON.rating;
+    this.review    = bookJSON.review || '';
+    this.url       = 'http://www.amazon.com/gp/product/' + this.asin + '?tag=amazonsimilar-20';
+}
+                </code></pre>
+            </section>
+
+
+            <section data-html="slides/book-object.html" hidden="" class="future" style="">
+                <h2>
+                    <code>Book</code>Object</h2>
+
+                <p>Creates a new
+                    <code>Book</code>object using the
+                    <code>BookModel</code>
+                </p>
+
+                <pre><code class="javascript" contenteditable="">
+var book = new BookModel({
+    title: "1984",
+    author: "George Orwell",
+    asin: "0451524934",
+    thumbnail: "http://images.amazon.com/images/P/0451524934.01.ZTZZZZZZ.jpg",
+    rating: 4
+});
+                </code></pre>
+            </section>
+
+
+            <section data-html="slides/bookcollection.html" hidden="" class="future" style="">
+                <h2>
+                    <code>BookCollection</code>
+                </h2>
+
+                <p>Creates an array of <code>BookModel</code>s and provides sorting options.</p>
+
+                <pre><code class="javascript" contenteditable="">
+function BookCollection(booksJSON) {
+    this.items = [];
+        for (var i = 0; i &lt; booksJSON.length; i++) {
+            this.items.push(new BookModel(booksJSON[i]));
+        }
+    };
+
+    BookCollection.prototype.sort = function() {
+        this.items.sort(function(bookA, bookB){
+        return (bookA.rating - bookB.rating);
+    });
+};
+                </code></pre>
+            </section>
+
+
+            <section data-html="slides/bookcollection-object.html" hidden="" class="future" style="">
+                <h2>
+                    <code>BookCollection</code>Object</h2>
+
+                <p>Adds a newly created
+                    <code>BookModel</code>item to the
+                    <code>BookCollection</code>.</p>
+
+                <pre><code class="javascript" contenteditable="">
+var booksJSON = [{
+    title: "1984",
+    author: "George Orwell",
+    asin: "0451524934",
+    thumbnail: "http://images.amazon.com/images/P/0451524934.01.ZTZZZZZZ.jpg",
+    rating: 4
+  }]
+
+var books = new BookCollection(booksJSON);
+                </code></pre>
+            </section>
+
+            <section data-html="slides/exercise-1.html" hidden="" class="future" style="">
+                <h2>Exercise 1</h2>
+
+                <h2><a href="http://localhost:9000/exercises/1-models.html">Models in MVC</a>
+                </h2>
+            </section>
+
+
+
+
+
+
+
+            <section data-html="slides/bookshelf-view.html" hidden="" class="future" style="">
+                <h1>Views</h1>
+                <h2>
+                    <code>BookView</code>View</h2>
+                <h3>
+                    <code>BookShelf</code>View</h3>
+            </section>
+
+
+
+            <section data-html="slides/bookshelf-view2.html" hidden="" class="future" style="">
+                <h2>
+                    <code>BookShelf</code>View</h2>
+
+                <section>
+                    <pre><code class="javascript small" contenteditable="">
+function BookShelfView(books) {
+    var shelfDiv = $('&lt;div&gt;');
+    for (var i = 0; i &lt; books.items.length; i++) {
+        var book = books.items[i];
+        // Create a div with a linked image inside it,
+        // and add that to the shelf div
+        var bookDiv = $('&lt;div class="book"&gt;');
+        var bookLink = $('&lt;a&gt;');
+        bookLink.attr('href', book.url);
+        var bookCover = $('&lt;img&gt;');
+        bookCover.attr('src', book.thumbnail);
+        bookLink.append(bookCover);
+        bookDiv.append(bookLink);
+
+        ...
+
+                    </code></pre>
+                </section>
+                <section>
+                    <pre><code class="javascript small">
+                        ...
+
+        shelfDiv.append(bookDiv);
+
+        // On mouseover, pop up the review
+        bookDiv.bind('mouseover', function(e) {
+            var reviewDiv = $('&lt;div class="book-review"&gt;');
+            reviewDiv.html('&lt;strong&gt;' + book.rating + ' stars: &lt;/strong&gt;' + (book.review || ' No review.'));
+            reviewDiv.css({'position': 'absolute', 'top':  e.pageY, 'left': e.pageX});
+            $('body').append(reviewDiv);
+        });
+        bookDiv.bind('mouseout', function() {
+            $('.book-review').remove();
+        });
+    }
+
+    return shelfDiv;
+}
+
+
+
+                    </code></pre>
+
+                </section>
+            </section>
+
+
+            <section data-html="slides/whoa-really.html" hidden="" class="future" style="">
+                <h2>Whoa, really?</h2>
+
+                <p>Yeah, I know. That's a lot. But! We can break that into two smaller, nested views:</p>
+
+                <ul>
+                    <li>
+                        <code>BookView</code>
+                    </li>
+                    <li>
+                        <code>BookShelfView</code>
+                    </li>
+                </ul>
+
+                <br>
+                <br>
+                <p>Our
+                    <code>BookShelfView</code>can be comprised of a bunch of little
+                    <code>BookView</code>s. So what does that look like?</p>
+            </section>
+
+
+            <section data-html="slides/bookview.html" hidden="" class="future" style="">
+                <h2>
+                    <code>BookView</code>
+                </h2>
+
+                <p>First we make a
+                    <code>BookView</code>:</p>
+
+                <pre><code class="javascript" contenteditable="">
+
+function BookView(book) {
+  var bookDiv = $('<div class="book">');
+  var bookLink = $('&lt;a&gt;');
+  bookLink.attr('href', book.url);
+  var bookCover = $('&lt;img&gt;');
+  bookCover.attr('src', book.thumbnail);
+  bookLink.append(bookCover);
+  bookDiv.append(bookLink);
+
+  // Attach event listeners
+  return bookDiv;
+} 
+                </code></pre>
+            </section>
+
+            <section data-html="slides/bookshelfview.html" hidden="" class="future" style="">
+                <h2>
+                    <code>BookShelfView</code>
+                </h2>
+
+                <p>And then a
+                    <code>BookShelfView</code>, that uses
+                    <code>BookView</code>s.</p>
+
+                <pre><code class="javascript" contenteditable=""><span class="function"><span class="keyword">function</span> <span class="title">BookShelfView</span><span class="params">(books)</span> {</span>
+  <span class="keyword">var</span> shelfDiv = $(<span class="string">'&lt;div&gt;'</span>);
+  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; books.items.length; i++) {
+    <span class="keyword">var</span> book = books.items[i];
+    shelfDiv.append(<span class="keyword">new</span> BookView(book));
+  }
+  <span class="keyword">return</span> shelfDiv;
+}</code></pre>
+            </section>
+
+            <section data-html="slides/mvc-bookshelf.html" hidden="" class="future" style="">
+                <h2>MVC BookShelf</h2>
+
+                <p><a href="http://www.teaching-materials.org/jsmvc/demo/bookshelf_mvc.html">Try it!</a>
+                </p>
+            </section>
+
+
+            <section data-html="slides/exercise-2.html" hidden="" class="future" style="">
+                <h1>Exercise 2</h1>
+                <h2><a href="http://localhost:9000/exercises/2-views.html">Views in MVC</a>
+                </h2>
+            </section>
+
+
+            <section data-html="slides/mv-frameworks.html" hidden="" class="future" style="">
+                <h1>JavaScript Frameworks</h1>
+                <h2>MVC</h2>
+                <h3>and More!</h3>
+            </section>
+
+
+            <section data-html="slides/frameworks.html" hidden="" class="future" style="">
+                <h2>Frameworks</h2>
+
+                <img src="./images/frameworks.png" alt="">
+            </section>
+
+
+            <section data-html="slides/mvc.html" hidden="" class="future" style="">
+                <h2>MVC</h2>
+
+                <p>Three components: Model, View, Controller.</p>
+
+                <p>
+                    <strong>Controllers</strong> send commands to the Model that update the Model's state. Controllers also send commands to the View that change the presentation of the model.</p>
+
+                <p>Examples: <a href="http://emberjs.com/">EmberJS</a>, <a href="https://angularjs.org/">AngularJS</a>
+                </p>
+            </section>
+
+
+            <section data-html="slides/mvp.html" hidden="" class="future" style="">
+                <h2>MVP</h2>
+
+                <p>Three components: Model, View, Presenter.</p>
+
+                <p>MVP is derived from MVC.</p>
+
+                <p>
+                    <strong>Presenters</strong> are a middle layer, similar to a Controller. All logic related to presentation goes in the Presenters. The Model and the View don't talk to each other at all.</p>
+
+                <p>Examples: <a href="http://backbonejs.org/">BackboneJS</a>
+                </p>
+            </section>
+
+
+
+            <section data-html="slides/mvc-vs-mvp.html" hidden="" class="future" style="">
+                <h2>MVC vs. MVP</h2>
+
+                <p>They're quite similar, but not identical.</p>
+
+                <img src="./images/mvc-mvp.png" alt="">
+            </section>
+
+
+            <section data-html="slides/mvvm.html" hidden="" class="future" style="">
+                <h2>MVVM</h2>
+
+                <p>Three components: Model, View, ViewModel.</p>
+
+                <p>
+                    <strong>ViewModels</strong> send messages between the View and the Model - it is a mediator or converter. It changes Model info into View info, passes commands from the View into the Model, and exposes public properties, commands, and abstractions.</p>
+
+                <p>Examples: <a href="http://knockoutjs.com/">KnockoutJS</a>
+                </p>
+            </section>
+
+
+            <section data-html="slides/mv.html" hidden="" class="future" style="">
+                <h2>MV*</h2>
+
+                <p>Something else! There are other types of MV* frameworks out there. They're not as popular, so don't worry about them for now, but it is good to know that there are other options out there.</p>
+            </section>
+
+
+
+            <section data-html="slides/further-reading.html" hidden="" class="future" style="">
+                <h2>Further Reading</h2>
+
+                <p><a href="http://www.smashingmagazine.com/2012/07/27/journey-through-the-javascript-mvc-jungle/">The JavaScript MVC Jungle</a>
+                </p>
+
+                <p>Breakdown of differences between MV* frameworks.</p>
+            </section>
+
+
+
+            <section data-html="slides/todo-mvc.html" hidden="" class="future" style="">
+                <h2>Todo MVC</h2>
+
+                <p><a href="http://todomvc.com/">Todo MVC</a> implements a Todo list app in many of the popular JavaScript frameworks. It's a great tool to play with the different frameworks to see the differences.</p>
+            </section>
+
+
+            <section data-html="slides/questions.html" hidden="" class="future" style="">
+                <h1>Questions?</h1>
+
+                <p>Just like Elmo taught us that everybody poops...</p>
+
+                <img src="./images/elmo_poops.gif" alt="">
+
+                <p>Everybody also has questions.</p>
+            </section>
+
+
+
+
+        </div>
+        <footer>
+            <div class="copyright">
+                Girl Develop It Philly --
+                <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US">
+                    <img alt="Creative Commons License" style="" />
+                </a>
+            </div>
+        </footer>
+    </div>
+
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+    // Full list of configuration options available here:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [{
+            src: 'lib/js/classList.js',
+            condition: function() {
+                return !document.body.classList;
+            }
+        }, {
+            src: 'plugin/markdown/showdown.js',
+            condition: function() {
+                return !!document.querySelector('[data-markdown]');
+            }
+        }, {
+            src: 'plugin/markdown/markdown.js',
+            condition: function() {
+                return !!document.querySelector('[data-markdown]');
+            }
+        }, {
+            src: 'plugin/highlight/highlight.js',
+            async: true,
+            callback: function() {
+                hljs.initHighlightingOnLoad();
+            }
+        }, {
+            src: 'plugin/zoom-js/zoom.js',
+            async: true,
+            condition: function() {
+                return !!document.body.classList;
+            }
+        }, {
+            src: 'plugin/notes/notes.js',
+            async: true,
+            condition: function() {
+                return !!document.body.classList;
+            }
+        }]
+    });
+    </script>
+
+</body>
+
+</html>

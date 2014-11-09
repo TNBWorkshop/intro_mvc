@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Awesome Bookshelf</title>
+    <link rel="stylesheet" type="text/css" href="./styles/main.css">
+</head>
+<body>
+    <div id="app-container">
+        <div class="bookshelf">
+            <h2>My Bookshelf Title</h2>
+            <div class="book-list">
+                <div class="book">
+                    <h4 class="book-title">Awesome Book Title</h4>
+                    <div class="book-author">Jane Dope</div>
+                    <div class="book-details">
+                        <span class="detail"><span class="page-length">126</span> pages</span>
+                    </div>
+                </div>        
+                
+            </div>
+        </div>
+        
+    </div>
+    <!-- TEMPLATES -->
+    <script type="text/template" id="book-template">
+    </script>
+    <script type="text/template" id="bookshelf-template"></script>
+
+    <!-- DEPENDENCIES (aka, libraries) -->
+    <script type="text/javascript" src="./lib/jquery-2.11.0.js"></script>
+    <script type="text/javascript" src="./lib/handlebars-v2.0.0.js"></script>
+
+    <!-- APP FILES -->
+    <script type="text/javascript" src="./app/app.js"></script>
+    <script type="text/javascript" src="./app/models.js"></script>
+    <script type="text/javascript" src="./app/views.js"></script>
+    <script type="text/javascript" src="./app/main.js"></script>
+</body>
+</html>
