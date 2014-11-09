@@ -18,7 +18,7 @@ Use the exercise files [provided here](https://github.com/TNBWorkshop/intro_mvc/
 `$('#app-container').html(bookView.render());`
 
 
-**[See Solution]()
+**[See Solution](./answer_1.js)**
 
 
 
