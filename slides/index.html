@@ -321,7 +321,6 @@ Controller.prototype.onRoute = function(event) {
                     </ul>
                 </section>
                 <section>
-                    <h3>Example Data (JSON)</h3>
                     <pre><code class="json">
 [
     {
@@ -371,14 +370,17 @@ Controller.prototype.onRoute = function(event) {
 &lt;/script&gt;
                     </code></pre> -->
                 <section>
-                    <h3>Example Handlebars Template (Embedded in HTML)</h3>
+                    <h3>Example Handlebars Template</h3>
                     <pre><code class="html">
 &lt;div class="book"&gt;
     &lt;h4 class="book-title"&gt;{{ title }}&lt;/h4&gt;
     &lt;div class="book-author"&gt;{{ author }}&lt;/div&gt;
     &lt;div class="book-details"&gt;
         {{#each details}}
-            &lt;span class="detail"&gt;{{ name }}&lt;span class="value"&gt;{{ value }}&lt;/span&gt;&lt;/span&gt;
+            &lt;span class="detail"&gt;
+                {{ name }}
+            &lt;span class="value"&gt;{{ value }}&lt;/span&gt;
+            &lt;/span&gt;
         {{/each}}
     &lt;/div&gt;
 &lt;/div&gt; 
@@ -496,7 +498,7 @@ Controller.prototype.onRoute = function(event) {
 
             <section data-html="slides/mvc-vs-mvp.html" hidden="" class="future" style="">
                 <h2>MVC vs. MVP</h2>
-                <br/><br/>
+                <br/>
                 <p>They're quite similar, but not identical.</p>
 
                 <img src="./images/mvc-mvp.png" alt="">
