@@ -2,7 +2,7 @@
 
 Create the beginning of a Bookshelf app using the MVC pattern.
 
-Use the exercise files [provided here](https://github.com/TNBWorkshop/intro_mvc/blob/master/exercises/exercise_files.zip) as a starting point.
+Use the exercise files [provided here](https://github.com/TNBWorkshop/intro_mvc/raw/master/exercises/exercise_files.zip) as a starting point.
 
 ### Part 1 - The Book Shelf
 
