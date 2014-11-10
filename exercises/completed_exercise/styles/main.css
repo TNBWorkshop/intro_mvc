@@ -12,17 +12,33 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bookshelf {
+  margin: 0 auto;
+  max-width: 900px;
+}
 
+.book-list {
+  background: url('../images/bookshelf.png') no-repeat top center; 
+  width: 525px;
+  height: 450px;
+  padding-top: 58px;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .book {
-  padding: 12px;
-  border-bottom: 2px solid #EAEAEA;
+  padding: 18px 12px 12px 12px;
   overflow: hidden;
+  position: relative;
+  max-width: 500px;
 }
 
 .book .book-image, .book .book-info {
   float: left;
+  margin-right: 12px;
+}
+
+.book .book-info {
+  max-width: 360px;
 }
 
 .book .book-title {
@@ -33,9 +49,28 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 
-.book .book-image img {
+.book .close {
+  position: absolute;
+  text-align: right;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: bold;
+  color: #979797;
+  right: 4px;
+  top: -4px;
+  font-size: 13px;
+}
+
+.book .close:hover {
+  color: #4A90E2;
+}
+
+.book-image img {
   height: 150px;
-  margin-right: 6px;
+}
+
+.book-thumbnail .book-image img {
+  height: 110px;
 }
 
 .book-details {
@@ -44,4 +79,30 @@ h1, h2, h3, h4, h5, h6 {
 
 .book-details .detail {
   display: block;
+}
+
+.book-details .book-image {
+  margin-right: 6px;
+}
+
+.book-thumbnail {
+  float: left;
+  margin: 0 12px 28px 0;
+  cursor: pointer;
+  border: 2px solid black;
+}
+
+.book-thumbnail:hover {
+  border: 2px solid white;
+}
+
+#detail-container {
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+  padding-top: 18px;
+  padding-right: 18px;
 }

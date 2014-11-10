@@ -9,11 +9,24 @@
     <div id="app-container">
         <!-- dynamic HTML will go here -->    
     </div>
-
+    <div id="detail-container" style="display: none;"></div>
 
     <!-- TEMPLATES -->
-    <script type="text/template" id="book-template">
+    <script type="text/template" id="book-thumbnail">
+        <div class="book-thumbnail">
+            <div class="book-image">
+                {{#if imageUrl }}
+                    <img src="{{ imageUrl }}" />
+                {{else}}
+                    <img src="./images/books/no-book.png" />
+                {{/if}}
+            </div>
+        </div>
+    </script>
+
+    <script type="text/template" id="book-detail-template">
         <div class="book">
+            <div class="close">close</div>
             <div class="book-image">
                 {{#if imageUrl }}
                     <img src="{{ imageUrl }}" />
@@ -54,6 +67,9 @@
     <script type="text/javascript" src="./scripts/app/framework.js"></script>
 
     <!-- APP FILES -->
+    <script type="text/javascript" src="./scripts/app/views.js"></script>
     <script type="text/javascript" src="./scripts/app/main.js"></script>
+
+
 </body>
 </html>

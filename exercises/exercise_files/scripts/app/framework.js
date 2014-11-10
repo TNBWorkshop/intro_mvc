@@ -54,6 +54,9 @@ MVC.View = function(options) {
   this.model = options.model;
   this.template = options.template;
 
+  // where we will keep a version of the template to 
+  this.$el = $('<div />');
+
   this.render = function () {
     // prepare the html template for use with model data
     var template = Handlebars.compile(this.template);
@@ -61,7 +64,7 @@ MVC.View = function(options) {
 
     // create a jQuery object to reference our view's rendered content
     // this will be used for event binding later
-    this.$el = $(result);
+    this.$el.html(result);
 
     // pass compiled template our model data and return the result
     return this.$el;
