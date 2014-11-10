@@ -12,7 +12,7 @@ Use the exercise files [provided here](https://github.com/TNBWorkshop/intro_mvc/
 
 - Inside of the `main.js` file, create a variable called `bookShelfModel`, and assign it a new instance of `MVC.Model` with the `DATA.bookshelf` object as the only argument.
 
-- Inside of the `main.js` file, create a variable called `bookShelfView`, and assign it a new instance of `MVC.View`, and assign it the following values:
+- Inside of the `main.js` file, create a variable called `bookShelfView`, and assign it a new instance of `MVC.View`, and assign it the following options:
   * `template` should be `$('#bookshelf-template').html()`
   * `model` should be the variable you created with a new model, called `bookShelfModel`
 
