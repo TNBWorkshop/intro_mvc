@@ -1,8 +1,8 @@
-var bookModel = new MVC.Model(DATA.books[0]);
+var bookShelfModel = new MVC.Model(DATA.bookshelf);
 
-var bookView = new MVC.View({
-  template: $('#book-template').html(),
-  model: bookModel
+var bookShelfView = new MVC.View({
+  template: $('#bookshelf-template').html(),
+  model: bookShelfModel
 });
 
-$('#app-container').html(bookView.render());
+$('#app-container').html(bookShelfView.render());

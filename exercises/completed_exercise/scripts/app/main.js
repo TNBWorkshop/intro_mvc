@@ -1,37 +1,30 @@
 
 $(function() {
 
-  var bookModel = new MVC.Model(DATA.books[0]);
+  var bookShelfModel = new MVC.Model(DATA.bookshelf);
 
-  var bookView = new MVC.View({
-    template: $('#book-template').html(),
-    model: bookModel
+  var bookShelfView = new MVC.View({
+    template: $('#bookshelf-template').html(),
+    model: bookShelfModel
   });
 
-  $('#app-container').html(bookView.render());
+  $('#app-container').html(bookShelfView.render());
 
-  // // Start by creating a bookshelf element
-  // var bookShelfView = new App.Views.BookShelf({
-  //       model: new App.Models.Book(DATA.bookshelf),
-  //       template: $('#bookshelf-template').html()
-  //     });
+  // Target the child element .book-list inside the now-rendered bookshelf template
+  var $bookList = $('.book-list');
 
-  // $('#app-container').html(bookShelfView.render());
+  // iterate through each book item in the DATA.books array
+  $.each(DATA.books, function(index, bookData) {
+    // create a new view for each book object
+    var bookView = new MVC.View({
+      model: new MVC.Model(bookData),
+      template: $('#book-template').html()
+    });
 
-  // // VERSION 1: Single View for each book.
-  // // Add some books to the bookshelf!
-  // var $bookList = $('.book-list');
+    // add it to the end of the container
+    $bookList.append(bookView.render());
+  });
 
-  // // iterate through each book item in the DATA.books array
-  // $.each(DATA.books, function(index, bookData) {
-  //   // create a new view for each book object
-  //   var bookView = new App.Views.Book({
-  //     model: new App.Models.Book(bookData),
-  //     template: $('#book-template').html()
-  //   });
 
-  //   // add it to the end of the container
-  //   $bookList.append(bookView.render());
-  // });
 
 });

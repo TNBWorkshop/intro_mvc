@@ -1,12 +1,12 @@
 window.DATA = {
-  bookshelf {
-    name: "Top 10 books of 2014",
-  }, {
+  bookshelf: {
+    name: "Amazon's Top 10 books of 2014",
+  },
   books: [
     {
       title: "Everything I Never Told You: A Novel",
       author: "Celeste Ng",
-      imageUrl: "./images/books/book_1.jpeg"
+      imageUrl: "./images/books/book_1.jpeg",
       details: {
         pages: 304,
         stars: 4,
@@ -15,7 +15,7 @@ window.DATA = {
     }, {
       title: "All the Light We Cannot See: A Novel",
       author: "Anthony Doerr",
-      imageUrl: "./images/books/book_2.jpeg"
+      imageUrl: "./images/books/book_2.jpeg",
       details: {
         pages: 544,
         stars: 4.5,
@@ -94,5 +94,5 @@ window.DATA = {
         rating: 10
       }
     }
-  ]}
+  ]
 };

@@ -1,6 +1,2 @@
 
-$(function() {
-
-  App.start($('#app-container'));
-
-});
+// Put your awesome Bookshelf App code here!
