@@ -1,1 +1,4 @@
-// Your awesome bookshelf app code here!
+// -----------------------------------------
+// Your awesome bookshelf app code here!   |
+// -----------------------------------------
+
