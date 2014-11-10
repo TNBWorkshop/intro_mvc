@@ -2,7 +2,7 @@
 
 Add functionality to the Bookshelf with a detailed view event.
 
-Continue from Exercise 1 using the exercise files [provided here](https://github.com/TNBWorkshop/intro_mvc/tree/master/exercises/exercise_files).
+Continue from Exercise 1 using the exercise files [provided here](https://github.com/TNBWorkshop/intro_mvc/blob/master/exercises/exercise_files.zip).
 
 - Take a look at `views.js`. There are some custom views already started for you. Read through the code and try to get a feel for what's happening.
 
