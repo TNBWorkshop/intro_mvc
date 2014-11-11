@@ -8,7 +8,7 @@ $.each(DATA.books, function(index, bookData) {
   // create a new view for each book object
   var bookView = new MVC.View({
     model: new MVC.Model(bookData),
-    template: $('#book-template').html()
+    template: $('#book-thumbnail').html()
   });
 
   // add it to the end of the container
