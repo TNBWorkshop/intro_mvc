@@ -27,7 +27,7 @@ Use the exercise files [provided here](https://github.com/TNBWorkshop/intro_mvc/
 
 - Create an iterator using `$.each` (or a regular `for` loop if you prefer) looping over each item in the `DATA.books` array, and do the following:
     * Create a new view for each book object, and assign it to a variable, such as `bookView`, with the following options:  
-      - `template` should be `$('#book-template').html()`
+      - `template` should be `$('#book-thumbnail').html()`
       - `model` should be a new `MVC.Model`, with the data being the current object in the loop
     * Append each new view to the `$bookList` element using the jQuery like so:  
     `$bookList.append(bookView.render());`
